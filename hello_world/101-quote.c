@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <unistd.h>
 #include <string.h>
 /**
  * main - Entry point
@@ -7,7 +7,9 @@
  */
 int main(void)
 {
-	int n = strlen("and that piece of art is useful\" - Dora Korpar, 2015-10-19\n");
-	fwrite("and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", 1, n, stderr);
+	int n;
+
+	n = strlen("and that piece of art is useful\" - Dora Korpar, 2015-10-19\n");
+	write(2, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", n);
 	return (1);
 }
