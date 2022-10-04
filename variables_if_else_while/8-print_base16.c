@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+/**
+  * main - Entry point
+  *
+  * Return: Always 0 (Success)
+  */
+int main(void)
+{
+	int n;
+	char ch;
+
+	for (n = '1'; n <= '9'; n++)
+	{
+		putchar(n);
+	}
+
+	for (ch = 'a'; ch <= 'f'; ch++)
+	{
+		putchar(ch);
+	}
+
+	putchar('\n');
+
+	return (0);
+}
