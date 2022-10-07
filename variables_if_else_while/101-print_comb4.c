@@ -10,9 +10,6 @@ int main(void)
 	int i;
 	int j;
 	int k;
-	int a = 0;
-	int b = 1;
-	int c = 2;
 
 	for (i = 48; i <= 55; i++)
 	{
@@ -23,18 +20,14 @@ int main(void)
 				putchar(i);
 				putchar(j);
 				putchar(k);
-				if (a != 7 && b != 8 && c != 9)
+				if (!(i == 55 && j == 56 && k == 57))
 				{
 					putchar(',');
 					putchar(' ');
-				};
-				c++;
+				}
+
 			};
-			b++;
-			c = 2;
 		};
-		a++;
-		b = 1;
 	};
 	putchar('\n');
 
