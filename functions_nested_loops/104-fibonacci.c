@@ -9,9 +9,9 @@
 int main(void)
 {
 	int i;
-	double a1;
-	double a2;
-	double nextTerm;
+	long double a1;
+	long double a2;
+	long double nextTerm;
 
 	/* Initialize first and second term */
 	a1 = 1;
@@ -21,12 +21,12 @@ int main(void)
 	nextTerm = a1 + a2;
 
 	/* Print the first two terms */
-	printf("%.0f, %.0f, ", a1, a2);
+	printf("%.0Lf, %.0Lf, ", a1, a2);
 
 	/* Print 3rd to 98th term */
 	for (i = 3; i <= 98; i++)
 	{
-		printf("%.0f", nextTerm);
+		printf("%.0Lf", nextTerm);
 		a1 = a2;
 		a2 = nextTerm;
 		nextTerm = a1 + a2;
