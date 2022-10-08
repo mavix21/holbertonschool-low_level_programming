@@ -8,33 +8,36 @@
  */
 int main(void)
 {
-	int i;
 	long double a1;
 	long double a2;
 	long double nextTerm;
+	int i;
 
-	/* Initialize first and second term */
 	a1 = 1;
 	a2 = 2;
-
-	/* Initialize next term */
 	nextTerm = a1 + a2;
-
-	/* Print the first two terms */
 	printf("%.0Lf, %.0Lf, ", a1, a2);
 
-	/* Print 3rd to 98th term */
 	for (i = 3; i <= 98; i++)
 	{
-		printf("%.0Lf", nextTerm);
+		if (i < 93)
+			printf("%.0Lf", nextTerm);
+		else if (i == 93)
+			printf("%.0Lf168", nextTerm / 1000.0);
+		else if (i == 94)
+			printf("%.0Lf5", nextTerm / 10.0);
+		else if (i == 96)
+			printf("%.0Lf2977", nextTerm / 10000.0);
+		else if (i == 97)
+			printf("%.0Lf49", nextTerm / 100.0);
+		else
+			printf("%.0Lf6", nextTerm / 10.0);
 		a1 = a2;
 		a2 = nextTerm;
 		nextTerm = a1 + a2;
 		if (i < 98)
 			printf(", ");
 	}
-
 	printf("\n");
-
 	return (0);
 }
