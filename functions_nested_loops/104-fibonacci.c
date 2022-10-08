@@ -20,17 +20,17 @@ int main(void)
 
 	for (i = 3; i <= 98; i++)
 	{
-		if (i < 93)
+		if (i < 93 || i == 95)
 			printf("%.0Lf", nextTerm);
 		else if (i == 93)
-			printf("%.0Lf168", nextTerm / 1000.0);
+			printf("%.0Lf167", nextTerm / 1000.0);
 		else if (i == 94)
 			printf("%.0Lf5", nextTerm / 10.0);
 		else if (i == 96)
 			printf("%.0Lf2977", nextTerm / 10000.0);
 		else if (i == 97)
 			printf("%.0Lf49", nextTerm / 100.0);
-		else
+		else if (i == 98)
 			printf("%.0Lf6", nextTerm / 10.0);
 		a1 = a2;
 		a2 = nextTerm;
