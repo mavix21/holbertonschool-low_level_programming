@@ -6,21 +6,35 @@
 void print_number(int n)
 {
 	int i;
-	int inReverse = 0;
+	unsigned long int inReverse = 0;
 
-	for (i = n; i != 0 ; i /= 10)
-		inReverse = inReverse * 10 + (i % 10);
-
-	while (inReverse != 0)
+	if (n < 0)
 	{
-		if (inReverse < 0)
+		for (i = n; i != 0 ; i /= 10)
+			inReverse = inReverse * 10 - (i % 10);
+		_putchar('-');
+		while (inReverse != 0)
 		{
-			inReverse = -1 * inReverse;
-			_putchar('-');
+			_putchar((inReverse % 10) + '0');
+			inReverse /= 10;
 		}
-		_putchar((inReverse % 10) + '0');
-		inReverse /= 10;
+		if (n % 10 == 0)
+			_putchar('0');
 	}
-	if (n == 0)
+	else if (n > 0)
+	{
+		for (i = n; i != 0 ; i /= 10)
+			inReverse = inReverse * 10 + (i % 10);
+		while (inReverse != 0)
+		{
+			_putchar((inReverse % 10) + '0');
+			inReverse /= 10;
+		}
+		if (n % 10 == 0)
+			_putchar('0');
+	}
+	else
+	{
 		_putchar(n + '0');
+	}
 }
