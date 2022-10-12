@@ -5,6 +5,7 @@
  * @src: Pointer to the String we want to copy
  * @dest: Pointer to the buffer where src will be allocated
  *
+ * Return: Pointer to dest
  */
 char *_strcpy(char *dest, char *src)
 {
