@@ -4,14 +4,14 @@
  * _atoi - Converts a string to an integer
  * @s: Pointer pointing to the first element of a given string
  *
- * Return: The converted value 
+ * Return: The converted value
  */
 int _atoi(char *s)
 {
 	unsigned int i;
 	unsigned int j;
 	unsigned int len;
-	int num;
+	unsigned int num;
 	int sign;
 
 	len = 0;
