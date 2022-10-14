@@ -15,6 +15,9 @@ char *cap_string(char *txt)
 
 	for (i = 0; txt[i] != '\0'; i++)
 	{
+		if (i == 0 && txt[i] >= 'a' && txt[i] <= 'z')
+			txt[i] -= 32;
+
 		for (j = 0; j < 7; j++)
 		{
 			if (txt[i] == f[j] || txt[i] == g[j])
