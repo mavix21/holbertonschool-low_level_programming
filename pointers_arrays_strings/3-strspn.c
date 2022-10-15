@@ -9,7 +9,7 @@
  * Return: Length of a prefix substring which contains only bytes from accept
  *
  */
-unsigned int *_strspn(char *s, char *accept)
+unsigned int _strspn(char *s, char *accept)
 {
 	int i;
 	int j;
