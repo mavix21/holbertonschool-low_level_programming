@@ -16,7 +16,7 @@ char *rot13(char *s)
 			*s += 13;
 		else if ((*s >= 'n' && *s <= 'z') || (*s >= 'N' && *s <= 'Z'))
 			*s -= 13;
-	} while (*s++));
+	} while (*s++);
 
 	return (anchor);
 }
