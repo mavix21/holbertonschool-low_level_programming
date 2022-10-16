@@ -19,10 +19,12 @@ char *_strpbrk(char *s, char *accept)
 	do {
 		while (*accept && *accept != *s)
 			accept++;
-		if (*accept == *s)
-			return (s);
-		else
+		if (*accept == '\0')
+		{
 			accept = anchor;
-	} while (++(*s));
+			continue;
+		}
+		return (s);
+	} while (*(++s));
 	return (NULL);
 }
