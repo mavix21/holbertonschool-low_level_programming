@@ -22,6 +22,6 @@ char *_strpbrk(char *s, char *accept)
 		if (*accept == *s)
 			return (s);
 		accept = anchor;
-	} while (*s++);
+	} while (++(*s));
 	return (NULL);
 }
