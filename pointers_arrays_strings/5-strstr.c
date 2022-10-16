@@ -26,7 +26,7 @@ char *_strstr(char *haystack, char *needle)
 			haystack++;
 			needle++;
 			if (*(needle + 1) == '\0')
-				return (needle - length + 1);
+				return (haystack - length + 1);
 		}
 		needle = anchor;
 	} while (*(++haystack));
