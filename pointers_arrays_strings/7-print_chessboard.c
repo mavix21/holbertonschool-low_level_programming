@@ -2,7 +2,7 @@
 #include <stddef.h>
 #include <stdio.h>
 /**
- * _print_chessboard - Prints the chessboard
+ * print_chessboard - Prints the chessboard
  * @a: 2D array containing the chessboard pieces
  *
  */
