@@ -10,7 +10,7 @@ char *rot13(char *s)
 {
 	int i;
 	int j;
-	char alpha[104] = "abcdefghijklmnopqrstuvwxyz"
+	char alpha[104] = "abcdefghijklmnopqrstuvwxyz";
 	char *alphaLow = "abcdefghijklmnopqrstuvwxyz";
 	char *alphaUpp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
