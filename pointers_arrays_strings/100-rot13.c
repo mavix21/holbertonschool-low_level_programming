@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 /**
  * rot13 - Encodes a string using rot13
  * @s: Pointer pointing to the first element of the String
@@ -7,16 +8,23 @@
  */
 char *rot13(char *s)
 {
-	char *anchor;
+	int i;
+	int j;
+	char alpha[104] = "abcdefghijklmnopqrstuvwxyz"
+	char *alphaLow = "abcdefghijklmnopqrstuvwxyz";
+	char *alphaUpp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-	anchor = s;
+	strcat(alpha, alphaLow);
+	strcat(alpha, alphaUpp);
+	strcat(alpha, alphaUpp);
 
-	do {
-		if ((*s >= 'a' && *s <= 'm') || (*s >= 'A' && *s <= 'M'))
-			*s += 13;
-		else if ((*s >= 'n' && *s <= 'z') || (*s >= 'N' && *s <= 'Z'))
-			*s -= 13;
-	} while (*s++);
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		for (j = 0; alpha[j] && alpha[j] != s[i]; j++)
+		;
+		if (alpha[j])
+			s[i] = alpha[j + 13];
+	}
 
-	return (anchor);
+	return (s);
 }
