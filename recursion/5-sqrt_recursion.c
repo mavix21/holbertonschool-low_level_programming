@@ -7,9 +7,9 @@
  *
  * Return: Square root
  */
-int _sqrt_guess(int k, int n)
+int _sqrt_guess(long int k, int n)
 {
-	int next_k;
+	long int next_k;
 
 	if (n >= 0)
 		next_k = (k + n / k) / 2;
