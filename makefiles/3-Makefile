@@ -8,10 +8,10 @@ all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 clean:
-	$(RM) *~ $(NAME) *.swp
+	$(RM) -f *~ $(NAME) *.swp
 
 oclean:
-	$(RM) $(OBJ)
+	$(RM) -f $(OBJ)
 
 fclean: clean oclean
 	
