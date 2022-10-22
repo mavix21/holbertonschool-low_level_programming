@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 {
 	int sum;
 	int i;
-	long unsigned int j;
+	unsigned long int j;
 
 	sum = 0;
 	for (i = 1; i < argc; i++)
@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 		sum += atoi(argv[i]);
 	}
 
-	printf("%d\n", sum); 
+	printf("%d\n", sum);
 
 	return (0);
 }
