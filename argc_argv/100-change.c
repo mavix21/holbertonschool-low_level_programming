@@ -37,7 +37,7 @@ int main(int argc, char **argv)
 		{
 			change = money / coins[i];
 			rem = money % coins[i];
-			for (j = 2; j < 5; j++)
+			for (j = i + 1; j < 5; j++)
 			{
 				change += rem / coins[j];
 				rem %= coins[j];
