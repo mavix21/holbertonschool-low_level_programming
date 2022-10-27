@@ -14,8 +14,10 @@ char *create_array(unsigned int size, char c)
 
 	buffer = (char *) malloc(size * sizeof(char));
 
-	while (size--)
+	do {
 		buffer[size] = c;
+
+	} while (size--);
 
 	return (buffer);
 }
