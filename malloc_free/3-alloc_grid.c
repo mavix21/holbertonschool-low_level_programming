@@ -13,6 +13,7 @@
 int **alloc_grid(int width, int height)
 {
 	int **buffer;
+	int i, j;
 
 	buffer = malloc(height * sizeof(int *));
 
