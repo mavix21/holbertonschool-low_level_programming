@@ -16,12 +16,12 @@ void print_dog(struct dog *d)
 		return;
 
 	if (d->name == NULL)
-		dogs_name = "(nill)";
+		dogs_name = "(nil)";
 	else
 		dogs_name = d->name;
 
 	if (d->owner == NULL)
-		dogs_owner = "(nill)";
+		dogs_owner = "(nil)";
 	else
 		dogs_owner = d->owner;
 
