@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include "dog.h"
-#include <string.h>
+
 /**
  * new_dog - Creates a variable of type dog_t
  * @name: Dog's name
@@ -12,28 +12,39 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *dog;
+	unsigned int i, name_len, owner_len;
+
+	if (name == NULL || owner == NULL)
+		return (NULL);
 
 	dog = malloc(sizeof(dog_t));
 	if (dog == NULL)
 		return (NULL);
 
-	dog->name = malloc(sizeof(char) * strlen(name));
+	for (name_len = 0; name[name_len]; name_len++)
+	;
+	name_len++;
+	dog->name = malloc(sizeof(char) * name_len);
 	if (dog->name == NULL)
 	{
 		free(dog);
 		return (NULL);
 	}
-
-	dog->owner = malloc(sizeof(char) * strlen(owner));
+	for (i = 0; i < name_len; i++)
+		dog->name[i] = name[i];
+	dog->age = age;
+	for (owner_len = 0; owner[owner_len]; owner_len++)
+	;
+	owner_len++;
+	dog->owner = malloc(sizeof(char) * owner_len);
 	if (dog->owner == NULL)
 	{
 		free(dog->name);
 		free(dog);
+		return (NULL);
 	}
-
-	strcpy(dog->name, name);
-	strcpy(dog->owner, owner);
-	dog->age = age;
+	for (i = 0; i < owner_len; i++)
+		dog->owner[i] = owner[i];
 
 	return (dog);
 }
