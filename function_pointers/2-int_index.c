@@ -10,7 +10,7 @@
  *
  * Return: Index of the first element that satisfies the condition(s)
  */
-int int_index(int *array, size_t size, int (*cmp)(int))
+int int_index(int *array, int size, int (*cmp)(int))
 {
 	unsigned int i;
 
