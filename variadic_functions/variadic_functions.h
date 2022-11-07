@@ -1,5 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
+#include <stdarg.h>
 /**
  * struct fmt - Matches specifier with its corresponding printer function
  * @formater: Specifier
