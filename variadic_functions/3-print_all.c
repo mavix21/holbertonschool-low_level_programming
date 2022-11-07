@@ -90,10 +90,6 @@ void print_all(const char * const format, ...)
 			if (format[i] == *(fmts[j].formater))
 			{
 				(*(fmts[j].print_fmt))(args);
-				if (format[i + 1] != '\0')
-				{
-					printf(", ");
-				}
 				break;
 			}
 			j++;
