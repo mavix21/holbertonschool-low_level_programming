@@ -1,5 +1,4 @@
 #include <stdarg.h>
-#include <string.h>
 #include <stdio.h>
 #include "variadic_functions.h"
 /**
@@ -52,9 +51,11 @@ void print_string(va_list args)
 {
 	char *str = va_arg(args, char *);
 	if (str == NULL)
+	{
 		printf("(nil)");
-	else
-		printf("%s", str);
+		return;
+	}
+	printf("%s", str);
 }
 
 /**
