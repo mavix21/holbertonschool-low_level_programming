@@ -83,6 +83,7 @@ void print_all(const char * const format, ...)
 		{"s", print_string},
 		{NULL, NULL}
 	};
+	char *separator = "";
 
 	va_start(args, format);
 	i = 0;
@@ -93,11 +94,9 @@ void print_all(const char * const format, ...)
 		{
 			if (format[i] == *(fmts[j].formater))
 			{
+				printf("%s", separator);
 				(*(fmts[j].print_fmt))(args);
-				if (format[i + 1] != '\0')
-				{
-					printf(", ");
-				}
+				separator = ", ";
 				break;
 			}
 			j++;
