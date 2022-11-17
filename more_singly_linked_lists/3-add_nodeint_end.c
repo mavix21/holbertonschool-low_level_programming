@@ -44,7 +44,7 @@ void insert_end_recursive(listint_t **head, const int n)
 }
 
 /**
- * add_node_end - Adds a new node at the end of a listint_t list
+ * add_nodeint_end - Adds a new node at the end of a listint_t list
  * @head: Address of header pointer (pointer to head pointer)
  * @n: Numeric element for the new node
  *
@@ -55,6 +55,8 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 	listint_t *tail;
 
 	insert_end_recursive(head, n);
+	if (*head == NULL)
+		return (NULL);
 
 	tail = *head;
 
