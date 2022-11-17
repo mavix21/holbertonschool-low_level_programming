@@ -76,16 +76,30 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
+	unsigned int numberOfNodes = 0;
 	listint_t *nodeAtIdx;
 	listint_t *nodeAtPrevIdx;
 	listint_t *newNode;
+	listint_t *temp;
+
+	temp = *head;
+	while (temp != NULL)
+	{
+		numberOfNodes++;
+		temp = temp->next;
+	}
 
 	if (idx == 0)
 		return (add_nodeint(head, n));
 
 	nodeAtIdx = get_nodeint_at_index(*head, idx);
 	if (nodeAtIdx == NULL)
-		return (NULL);
+	{
+		if (numberOfNodes == idx)
+			return (add_nodeint_end(head, n));
+		else
+			return (NULL);
+	}
 
 	nodeAtPrevIdx = get_nodeint_at_index(*head, idx - 1);
 
