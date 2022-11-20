@@ -9,6 +9,9 @@
  */
 int is_binary(const char *str)
 {
+	if (str == NULL)
+		return (0);
+
 	for (; *str != '\0'; str++)
 	{
 		if (*str != '0' && *str != '1')
@@ -30,7 +33,7 @@ unsigned int binary_to_uint(const char *b)
 {
 	unsigned int result;
 
-	if (!is_binary(b) || b == NULL)
+	if (b == NULL || !is_binary(b))
 		return (0);
 
 	result = 0;
