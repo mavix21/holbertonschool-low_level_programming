@@ -10,8 +10,9 @@
 size_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
-	char buf[1024];
-	long int actualLetters;
+	char *buf;
+	ssize_t actualLetters, writeCheck;
+	size_t charsWritten;
 
 	if (filename == NULL)
 		return (0);
@@ -20,9 +21,19 @@ size_t read_textfile(const char *filename, size_t letters)
 	if (fd < 0)
 		return (0);
 
+	buf = malloc(letters * sizeof(char));
+	if (buf == NULL)
+		return (0);
+
 	actualLetters = read(fd, buf, letters);
 	if (actualLetters < 0)
 		return (0);
 
-	return (write(STDOUT_FILENO, buf, actualLetters));
+	writeCheck = write(STDOUT_FILENO, buf, actualLetters);
+	if (writeCheck < 0)
+		return (0);
+
+	free(buf);
+	charsWritten = (size_t)writeCheck;
+	return (charsWritten);
 }
