@@ -33,6 +33,7 @@ size_t read_textfile(const char *filename, size_t letters)
 	if (writeCheck < 0)
 		return (0);
 
+	close(fd);
 	free(buf);
 	charsWritten = (size_t)writeCheck;
 	return (charsWritten);
