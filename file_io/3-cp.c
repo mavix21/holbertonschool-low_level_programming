@@ -43,6 +43,7 @@ int main(int ac, char **av)
 	{
 		fd_bad = (close_check_f < 0) ? close_check_f : close_check_t;
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fd_bad);
+		exit(100);
 	}
 
 	return (0);
