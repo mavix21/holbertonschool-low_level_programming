@@ -42,7 +42,7 @@ int main(int ac, char **av)
 	if (close_check_f < 0 || close_check_t < 0)
 	{
 		fd_bad = (close_check_f < 0) ? close_check_f : close_check_t;
-		dprintf(STEDERR_FILENO, "Error: Can't close fd %i\n", fd_bad);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fd_bad);
 	}
 
 	return (0);
