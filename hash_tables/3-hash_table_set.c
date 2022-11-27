@@ -45,12 +45,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	index = key_index((unsigned char *)key, ht->size);
 
 	if (ht->array[index] != NULL && !strcmp(ht->array[index]->key, key))
+	{
 		ht->array[index]->value = strdup(value);
-
-	add_hnode(&ht->array[index], key, value);
-
-	if (ht->array[index] == NULL)
-		return (0);
+	}
+	else
+	{
+		add_hnode(&ht->array[index], key, value);
+		if (ht->array[index] == NULL)
+			return (0);
+	}
 
 	return (1);
 }
