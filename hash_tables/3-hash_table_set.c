@@ -2,9 +2,9 @@
 
 /**
  * add_hnode - Adds a new node at the beginning of a hash_node_t list
- * @head: Address of header pointer (pointer to head pointer)
- * @value: value for the new node
+ * @h: Address of header pointer (pointer to head pointer)
  * @key: key of the new node
+ * @value: value for the new node
  *
  * Return: Address of the new element, NULL otherwise
  */
@@ -39,12 +39,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
 
-	if (key == NULL || strlen(key) == 0 || value == NULL)
+	if (ht == NULL || key == NULL || strlen(key) == 0 || value == NULL)
 		return (0);
 
 	index = key_index((unsigned char *)key, ht->size);
 
+	if (ht->array[index] != NULL && !strcmp(ht->array[index]->key, key))
+		ht->array[index]->value = strdup(value);
+
 	add_hnode(&ht->array[index], key, value);
+
 	if (ht->array[index] == NULL)
 		return (0);
 
