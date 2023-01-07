@@ -17,7 +17,7 @@ int advanced_binary(int *array, size_t size, int value)
 	if (array == NULL || size == 0)
 		return (-1);
 
-	mid = (size) / 2;
+	mid = (size - 1) / 2;
 	printf("Searching in array: ");
 	for (i = 0; i < size; i++)
 	{
@@ -48,6 +48,6 @@ int advanced_binary(int *array, size_t size, int value)
 	}
 	else
 	{
-		return (advanced_binary(array, mid, value));
+		return (advanced_binary(array, mid + 1, value));
 	}
 }
