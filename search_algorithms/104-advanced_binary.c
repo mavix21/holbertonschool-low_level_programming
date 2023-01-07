@@ -28,7 +28,7 @@ int advanced_binary(int *array, size_t size, int value)
 	printf("\n");
 	if (array[mid] == value)
 	{
-		result = advanced_binary(array, mid, value);
+		result = advanced_binary(array, mid != 0 ? mid + 1 : 0, value);
 		if (result != -1)
 			return (result);
 		else
