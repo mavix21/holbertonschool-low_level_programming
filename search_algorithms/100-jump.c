@@ -30,13 +30,13 @@ int jump_search(int *array, size_t size, int value)
 		return (-1);
 
 	/* Find the size of the sublists */
-	jump = (int)sqrt(size);
+	jump = (size_t)sqrt(size);
 
 	/* Leftmost and rightmost element of the sublist */
 	low = 0;
 	high = jump;
 
-	for (; value > array[step] && step <= size - 1; step += jump)
+	for (; step <= (size - 1) && value > array[step]; step += jump)
 		printf("Value checked array[%lu] = [%d]\n", step, array[step]);
 
 	if (step > 0)
